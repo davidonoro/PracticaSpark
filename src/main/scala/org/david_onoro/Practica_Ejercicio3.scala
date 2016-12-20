@@ -2,7 +2,8 @@ package org.david_onoro
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
-import org.dummy.OlympicMedalRecords
+import org.david_onoro.Beans.OlympicMedalRecords
+
 
 object Practica_Ejercicio3 extends App {
   val logFile = "OlympicAthletes.csv"
@@ -17,7 +18,7 @@ object Practica_Ejercicio3 extends App {
   }
   )
 
-  olympicMedalRecordsRDD.map(rec=>((rec.getOlympicGame),(rec.getName,rec.getGoldMedals+rec.getSilverMedals+rec.getBronzeMedals)))
+  olympicMedalRecordsRDD.map(rec=>((rec.olympicGame),(rec.name,rec.goldMedals+rec.silverMedals+rec.bronzeMedals)))
     .aggregateByKey(List[(String,Int)]())(
       (acc,curr)=>{
         val lista = curr :: acc

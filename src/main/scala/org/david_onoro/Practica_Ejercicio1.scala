@@ -2,7 +2,8 @@ package org.david_onoro
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
-import org.dummy.OlympicMedalRecords
+import org.david_onoro.Beans.OlympicMedalRecords
+
 
 object Practica_Ejercicio1 extends App {
   val logFile = "OlympicAthletes.csv"
@@ -17,8 +18,8 @@ object Practica_Ejercicio1 extends App {
   }
   )
 
-  olympicMedalRecordsRDD.filter(rec => rec.getCountry=="United States" || rec.getCountry=="China")
-    .map(x=> ((x.getOlympicGame,x.getCountry),x.getGoldMedals+x.getSilverMedals+x.getBronzeMedals))
+  olympicMedalRecordsRDD.filter(rec => rec.country=="United States" || rec.country=="China")
+    .map(x=> ((x.olympicGame,x.country),x.goldMedals+x.silverMedals+x.bronzeMedals))
     .reduceByKey(_+_)
     .map(x=>{
       if(x._1._2=="United States"){
