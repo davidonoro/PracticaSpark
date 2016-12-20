@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.dummy</groupId>
-    <artifactId>spark-ejercicio</artifactId>
+    <groupId>org.daviid_onoro</groupId>
+    <artifactId>spark-practica</artifactId>
     <version>1.0</version>
     <properties>
         <scala.version>2.10.4</scala.version>

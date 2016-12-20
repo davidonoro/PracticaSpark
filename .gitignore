@@ -30,3 +30,6 @@ crashlytics-build.properties
 
 
 target
+/target/
+/.idea/
+/spark-practica.iml
